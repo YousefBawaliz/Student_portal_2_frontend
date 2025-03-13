@@ -1,0 +1,184 @@
+student-portal/
+├── README.md
+├── docker-compose.yml
+├── .gitignore
+│
+├── backend/
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── .env.example
+│   ├── app.py
+│   ├── config.py
+│   │
+│   ├── migrations/
+│   │   └── README.md
+│   │
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   ├── test_auth.py
+│   │   ├── test_courses.py
+│   │   ├── test_classes.py
+│   │   └── test_content.py
+│   │
+│   ├── app/
+│       ├── __init__.py
+│       ├── models/
+│       │   ├── __init__.py
+│       │   ├── user.py
+│       │   ├── course.py
+│       │   ├── class_.py
+│       │   ├── enrollment.py
+│       │   ├── module.py
+│       │   ├── content.py
+│       │   ├── announcement.py
+│       │   └── calendar_event.py
+│       │
+│       ├── schemas/
+│       │   ├── __init__.py
+│       │   ├── user.py
+│       │   ├── course.py
+│       │   ├── class_.py
+│       │   ├── enrollment.py
+│       │   ├── module.py
+│       │   ├── content.py
+│       │   ├── announcement.py
+│       │   └── calendar_event.py
+│       │
+│       ├── api/
+│       │   ├── __init__.py
+│       │   ├── auth.py
+│       │   ├── users.py
+│       │   ├── courses.py
+│       │   ├── classes.py
+│       │   ├── enrollments.py
+│       │   ├── modules.py
+│       │   ├── content.py
+│       │   ├── announcements.py
+│       │   └── events.py
+│       │
+│       ├── services/
+│       │   ├── __init__.py
+│       │   ├── auth_service.py
+│       │   ├── file_service.py
+│       │   └── notification_service.py
+│       │
+│       ├── utils/
+│       │   ├── __init__.py
+│       │   ├── security.py
+│       │   ├── validators.py
+│       │   └── helpers.py
+│       │
+│       └── storage/
+│           └── files/
+│
+├── frontend/
+│   ├── README.md
+│   ├── index.html
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── vite.config.ts
+│   ├── .env.example
+│   │
+│   ├── public/
+│   │   ├── favicon.ico
+│   │   └── logo.svg
+│   │
+│   ├── src/
+│       ├── main.ts
+│       ├── App.vue
+│       ├── router.ts
+│       │
+│       ├── assets/
+│       │   ├── styles/
+│       │   │   ├── main.scss
+│       │   │   ├── variables.scss
+│       │   │   └── animations.scss
+│       │   │
+│       │   └── images/
+│       │       └── logo.png
+│       │
+│       ├── components/
+│       │   ├── common/
+│       │   │   ├── Navbar.vue
+│       │   │   ├── Sidebar.vue
+│       │   │   ├── Footer.vue
+│       │   │   ├── CourseCard.vue
+│       │   │   ├── LoadingSpinner.vue
+│       │   │   └── Toast.vue
+│       │   │
+│       │   ├── student/
+│       │   │   ├── CourseList.vue
+│       │   │   ├── ContentViewer.vue
+│       │   │   └── CalendarView.vue
+│       │   │
+│       │   ├── teacher/
+│       │   │   ├── ContentManager.vue
+│       │   │   ├── ModuleEditor.vue
+│       │   │   └── AnnouncementEditor.vue
+│       │   │
+│       │   └── admin/
+│       │       ├── UserManager.vue
+│       │       ├── CourseManager.vue
+│       │       └── ClassManager.vue
+│       │
+│       ├── views/
+│       │   ├── LoginView.vue
+│       │   ├── DashboardView.vue
+│       │   │
+│       │   ├── student/
+│       │   │   ├── StudentDashboard.vue
+│       │   │   ├── CourseContentView.vue
+│       │   │   └── StudentCalendar.vue
+│       │   │
+│       │   ├── teacher/
+│       │   │   ├── TeacherDashboard.vue
+│       │   │   ├── ContentManagement.vue
+│       │   │   └── TeacherCalendar.vue
+│       │   │
+│       │   └── admin/
+│       │       ├── AdminDashboard.vue
+│       │       ├── UserManagement.vue
+│       │       └── CourseManagement.vue
+│       │
+│       ├── store/
+│       │   ├── index.ts
+│       │   ├── auth.ts
+│       │   ├── user.ts
+│       │   ├── courses.ts
+│       │   ├── classes.ts
+│       │   └── content.ts
+│       │
+│       ├── services/
+│       │   ├── api.ts
+│       │   ├── auth.ts
+│       │   ├── users.ts
+│       │   ├── courses.ts
+│       │   ├── classes.ts
+│       │   ├── modules.ts
+│       │   ├── content.ts
+│       │   ├── announcements.ts
+│       │   └── events.ts
+│       │
+│       ├── types/
+│       │   ├── index.ts
+│       │   ├── user.ts
+│       │   ├── course.ts
+│       │   ├── class.ts
+│       │   ├── module.ts
+│       │   ├── content.ts
+│       │   ├── announcement.ts
+│       │   └── event.ts
+│       │
+│       └── utils/
+│           ├── auth.ts
+│           ├── formatting.ts
+│           ├── validation.ts
+│           └── animations.ts
+│
+└── database/
+    ├── schema.sql
+    └── seed/
+        ├── users.sql
+        ├── courses.sql
+        ├── classes.sql
+        └── modules.sql
