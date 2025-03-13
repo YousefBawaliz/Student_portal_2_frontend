@@ -32,6 +32,12 @@ api.interceptors.response.use(
   async (error: AxiosError) => {
     const authStore = useAuthStore();
     
+    // Skip refresh token logic for logout endpoint
+    if (error.config?.url?.includes('/auth/logout')) {
+      authStore.resetState();
+      return Promise.reject(error);
+    }
+
     if (error.response?.status === 401) {
       // Token has expired
       if (authStore.tokens?.refreshToken) {
@@ -43,13 +49,13 @@ api.interceptors.response.use(
             return api(config);
           }
         } catch (refreshError) {
-          // Refresh token failed, logout user
-          await authStore.logout();
+          // Refresh token failed, reset state without making logout request
+          authStore.resetState();
           return Promise.reject(refreshError);
         }
       } else {
-        // No refresh token available, logout user
-        await authStore.logout();
+        // No refresh token available, reset state without making logout request
+        authStore.resetState();
       }
     }
     return Promise.reject(error);

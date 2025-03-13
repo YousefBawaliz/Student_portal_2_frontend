@@ -52,7 +52,9 @@ export const useAuthStore = defineStore('auth', {
 
     async logout() {
       try {
-        await authService.logout();
+        if (this.isAuthenticated) {
+          await authService.logout();
+        }
       } catch (error) {
         console.error('Logout error:', error);
       } finally {
